@@ -186,3 +186,111 @@ int main() {
     return 0;
 }
 //11
+#include <iostream>
+
+inline int sumElements(const int* arr, int index1, int index2) {
+   
+    return arr[index1] + arr[index2];
+}
+
+
+int main() {
+    const int size = 5;
+    int array[size] = { 1, 2, 3, 4, 5 };
+
+    
+    int result = sumElements(array, 0, 2); 
+    std::cout << "Сумма элементов: " << result << std::endl; 
+
+    return 0;
+}
+
+//15
+#include <iostream>
+using namespace std;
+
+
+inline int absInt(int x) {
+    return (x < 0) ? -x : x;
+}
+
+
+inline double absDouble(double x) {
+    return (x < 0) ? -x : x;
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    int number1 = -42;
+    cout << "Модуль числа " << number1 << " равен " << absInt(number1) << endl;
+
+   
+    double number2 = -3.14159;
+    cout << "Модуль числа " << number2 << " равен " << absDouble(number2) << endl;
+
+    return 0;
+}
+
+//16
+#include <iostream>
+
+
+inline double maxOfThree(double a, double b, double c) {
+    return (a > b) ? (a > c) ? a : c : (b > c) ? b : c;
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    double num1 = 5.5;
+    double num2 = 8.2;
+    double num3 = 3.7;
+
+    double result = maxOfThree(num1, num2, num3);
+    std::cout << "Максимальное число: " << result << std::endl;
+
+    return 0;
+}
+
+//17
+#include <iostream>
+
+
+inline double squareArea(double side) {
+    return side * side; 
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    double side = 5.0;
+    double area = squareArea(side);
+
+    std::cout << "Площадь квадрата со стороной " << side << " равна " << area << std::endl;
+
+    return 0;
+}
+
+//18
+#include <iostream>
+
+
+inline bool isInRange(int number, int start, int end) {
+    return (number >= start && number <= end);
+}
+
+int main() {
+    setlocale(LC_ALL, "Russian");
+    int num = 10;
+    int rangeStart = 5;
+    int rangeEnd = 15;
+
+    if (isInRange(num, rangeStart, rangeEnd)) {
+        std::cout << "Число " << num << " находится в диапазоне [" << rangeStart << ", " << rangeEnd << "]\n";
+    }
+    else {
+        std::cout << "Число " << num << " не находится в диапазоне\n";
+    }
+
+    return 0;
+}
+
+
