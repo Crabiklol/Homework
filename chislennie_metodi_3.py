@@ -53,6 +53,7 @@ x_3 = 1.6x_1 + 5.3x_2 + 1.3x_3 = -2.4
 
 
 import math
+import numpy as np
 # Задаем условия
 epsilon = 0.001
 max_iter = 1000
@@ -69,6 +70,11 @@ for i in range(max_iter):
     x[1] = (3.5 - 2.5 * x[0] + 7.8 * x[2]) / 4.7
     # Обновляем x3, используя новые x1 и x2
     x[2] = (-2.4 - 1.6 * x[0] - 5.3 * x[1]) / 1.3
+
+A = np.array [ 0 , , 4.5] , [2.5, 4.7,  7.8] , [ 1.6, 5.3,  1.3]
+
+
+
 
     # Проверка сходимости
     if all(abs(x[i] - x_old[i]) < epsilon for i in range(3)):
